@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cómo llevar el control de tus apuestas deportivas (y por qué la mayoría no lo hace) · YieldLog</title>
+<meta name="description" content="Aprende a llevar el control real de tus apuestas deportivas. Yield, Win Rate, P&L y bankroll management explicados con ejemplos. Guía práctica para apostadores.">
+<meta name="keywords" content="control apuestas deportivas, registro apuestas, yield apuestas, win rate apuestas, bankroll management apuestas">
+<meta property="og:title" content="Cómo llevar el control de tus apuestas deportivas · YieldLog">
+<meta property="og:description" content="La guía práctica para apostadores que quieren saber exactamente cómo van: Yield, Win Rate, P&L y gestión de bankroll.">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://yieldlog.es/blog/control-apuestas-deportivas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #0B1628; --navy2: #111E35; --accent: #3DE8A0;
+    --muted: #8A9BBF; --muted2: #B0C0DC; --white: #F5F8FF;
+    --border: rgba(255,255,255,0.08);
+  }
+  body { background: var(--navy); color: var(--white); font-family: 'Outfit', sans-serif; font-size: 17px; line-height: 1.8; }
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 2rem; border-bottom: 1px solid var(--border); }
+  .logo { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--white); text-decoration: none; }
+  .logo span { color: var(--accent); }
+  nav a { color: var(--muted); text-decoration: none; font-size: .9rem; }
+  nav a:hover { color: var(--white); }
+  .btn-nav { background: var(--accent); color: var(--navy) !important; padding: .4rem 1rem; border-radius: 8px; font-weight: 600; }
+  article { max-width: 720px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+  .meta { display: flex; gap: 1rem; align-items: center; margin-bottom: 2rem; }
+  .tag { font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); font-weight: 600; background: rgba(61,232,160,0.1); padding: .25rem .75rem; border-radius: 100px; }
+  .date { font-size: .85rem; color: var(--muted); }
+  h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.15; letter-spacing: -.02em; margin-bottom: 1.5rem; }
+  h1 em { font-style: italic; color: var(--accent); }
+  .intro { font-size: 1.15rem; color: var(--muted2); margin-bottom: 3rem; line-height: 1.7; border-left: 3px solid var(--accent); padding-left: 1.25rem; }
+  h2 { font-family: 'DM Serif Display', serif; font-size: 1.6rem; margin: 2.5rem 0 1rem; letter-spacing: -.01em; }
+  h3 { font-size: 1.1rem; font-weight: 600; margin: 2rem 0 .75rem; color: var(--accent); }
+  p { margin-bottom: 1.25rem; color: var(--muted2); }
+  strong { color: var(--white); font-weight: 500; }
+  .formula { background: var(--navy2); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0; font-family: monospace; font-size: 1rem; color: var(--accent); }
+  .example { background: var(--navy2); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+  .example-title { font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 600; margin-bottom: .5rem; }
+  .example p { margin-bottom: .5rem; }
+  .example p:last-child { margin-bottom: 0; }
+  ul, ol { margin: 1rem 0 1.25rem 1.5rem; color: var(--muted2); }
+  li { margin-bottom: .5rem; line-height: 1.7; }
+  .cta-box { background: linear-gradient(135deg, rgba(61,232,160,0.08), rgba(74,158,255,0.05)); border: 1px solid rgba(61,232,160,0.2); border-radius: 16px; padding: 2rem; text-align: center; margin: 3rem 0; }
+  .cta-box h3 { color: var(--white); margin-bottom: .5rem; font-size: 1.3rem; }
+  .cta-box p { margin-bottom: 1.25rem; }
+  .btn { display: inline-block; background: var(--accent); color: var(--navy); padding: .75rem 1.75rem; border-radius: 10px; font-weight: 600; text-decoration: none; font-size: .95rem; }
+  .separator { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+  footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border); color: var(--muted); font-size: .8rem; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">Yield<span>Log</span></a>
+  <a href="/" class="btn-nav">Ver el producto</a>
+</nav>
+
+<article>
+  <div class="meta">
+    <span class="tag">Guía</span>
+    <span class="date">Mayo 2026</span>
+  </div>
+
+  <h1>Cómo llevar el control de tus apuestas deportivas <em>(y por qué la mayoría no lo hace)</em></h1>
+
+  <p class="intro">La mayoría de apostadores no sabe su Yield real. Apuestan por sensación, no por datos. Esta guía explica cómo llevar un control profesional de tus picks — y qué métricas mirar para tomar mejores decisiones.</p>
+
+  <h2>El problema: apostar sin datos</h2>
+
+  <p>¿Cuántas apuestas llevas este año? ¿Cuál es tu Win Rate? ¿En qué deporte o mercado ganas más dinero?</p>
+
+  <p>Si no sabes responder a estas preguntas con exactitud, estás apostando a ciegas. Y no porque seas descuidado — sino porque llevar un registro riguroso requiere esfuerzo, y la mayoría de herramientas disponibles están pensadas para otra cosa o son demasiado complicadas.</p>
+
+  <p>El resultado es siempre el mismo: <strong>una sensación vaga de si vas ganando o perdiendo</strong>, sin datos reales que te permitan mejorar o detectar qué está fallando.</p>
+
+  <h2>Las métricas que importan</h2>
+
+  <h3>Yield — la métrica más importante</h3>
+
+  <p>El Yield es el porcentaje de beneficio neto sobre el total apostado. Es la única métrica que permite comparar épocas distintas o tipsters con distinto volumen de forma justa.</p>
+
+  <div class="formula">Yield = (Beneficio neto ÷ Stake total) × 100</div>
+
+  <div class="example">
+    <div class="example-title">Ejemplo</div>
+    <p>Apostaste 1.000 € en total durante el mes y ganaste 80 € netos.</p>
+    <p><strong>Yield = (80 ÷ 1.000) × 100 = +8%</strong></p>
+    <p>Un Yield sostenido por encima del +5% es señal de rentabilidad real a largo plazo.</p>
+  </div>
+
+  <h3>Win Rate — tasa de acierto</h3>
+
+  <p>El porcentaje de picks acertados sobre el total resuelto. Ojo: un Win Rate alto no garantiza rentabilidad. Un apostador con 40% de WR apostando a cuotas altas puede ganar más que uno con 65% apostando siempre a favoritos.</p>
+
+  <div class="formula">Win Rate = (Picks ganados ÷ Picks resueltos) × 100</div>
+
+  <h3>P&L — beneficio o pérdida real</h3>
+
+  <p>Profit & Loss. El resultado en euros, pick a pick y acumulado. Es el número más honesto de tu situación real. Un Yield del +8% suena bien, pero el P&L te dice exactamente cuánto dinero has ganado o perdido.</p>
+
+  <div class="formula">P&L ganada = Stake × (Cuota − 1) &nbsp;·&nbsp; P&L perdida = −Stake</div>
+
+  <h3>Cuota media</h3>
+
+  <p>El promedio de todas tus cuotas. Combinada con el Win Rate revela tu perfil apostador: cuota baja + WR alto es un apostador de favoritos; cuota alta + WR bajo es un buscador de value. Ninguno es mejor por defecto — lo que importa es el Yield resultante.</p>
+
+  <hr class="separator">
+
+  <h2>Cómo registrar tus picks correctamente</h2>
+
+  <p>Un pick bien registrado debe incluir:</p>
+
+  <ul>
+    <li><strong>Fecha</strong> — imprescindible para análisis por período</li>
+    <li><strong>Deporte y competición</strong> — para saber en qué te va mejor</li>
+    <li><strong>Tipster o fuente</strong> — fundamental si sigues varios canales</li>
+    <li><strong>Casa de apuestas</strong> — algunas casas te funcionan mejor que otras</li>
+    <li><strong>Mercado</strong> — 1X2, Over/Under, Hándicap...</li>
+    <li><strong>Cuota y stake</strong> — sin esto no puedes calcular P&L ni Yield</li>
+    <li><strong>Resultado</strong> — Ganada, Perdida, Void o Pendiente</li>
+  </ul>
+
+  <p>El error más común es empezar registrando solo lo básico (cuota, stake, resultado) y luego darse cuenta de que no puedes saber qué tipster te funciona mejor o en qué mercado pierdes dinero. <strong>Registra todo desde el primer pick.</strong></p>
+
+  <h2>El problema del registro manual</h2>
+
+  <p>El mayor obstáculo para llevar un control riguroso no es la falta de ganas — es la fricción del registro.</p>
+
+  <p>El tipster publica el pick. Lo pones en la casa. Anotas que tienes que registrarlo. Llegas a casa, abres el Excel, intentas recordar la cuota exacta... Y al final o lo registras mal o directamente no lo registras.</p>
+
+  <p>La solución es reducir la fricción al mínimo: <strong>registrar en el mismo momento en que pones la apuesta, desde el móvil, en menos de 30 segundos.</strong></p>
+
+  <hr class="separator">
+
+  <h2>Gestión de bankroll básica</h2>
+
+  <p>El bankroll es el capital total que destinas a las apuestas. Gestionarlo bien es lo que separa a un apostador profesional de uno recreativo.</p>
+
+  <p>El sistema más usado es el de unidades de stake:</p>
+
+  <ul>
+    <li>Defines tu bankroll total (ej: 500 €)</li>
+    <li>Cada unidad equivale al 1% del bankroll (5 €)</li>
+    <li>Cada pick tiene un nivel de confianza del S1 al S10</li>
+    <li>S4 = apuestas 4 unidades = 4% del bankroll = 20 €</li>
+  </ul>
+
+  <p>Con este sistema <strong>nunca apuestas lo mismo en todos los picks</strong> — ajustas el importe según tu confianza real en cada pronóstico.</p>
+
+  <div class="cta-box">
+    <h3>Lleva el control de tus picks con YieldLog</h3>
+    <p>Registra picks en 30 segundos desde Telegram. Yield, Win Rate y P&L calculados automáticamente. Resumen semanal sin que hagas nada.</p>
+    <a href="/" class="btn">Ver YieldLog →</a>
+  </div>
+
+  <h2>Conclusión</h2>
+
+  <p>Llevar el control de tus apuestas deportivas no es opcional si quieres mejorar. Es la diferencia entre apostar por sensación y tomar decisiones basadas en datos reales.</p>
+
+  <p>Las métricas clave son Yield, Win Rate y P&L. El registro tiene que ser completo desde el primer pick. Y la herramienta tiene que ser tan fácil de usar que no haya excusa para no registrar.</p>
+
+  <p>Si llevas tiempo apostando sin un control riguroso, empieza hoy. Los primeros 30 días de datos ya te van a decir cosas que no sabías.</p>
+
+</article>
+
+<footer>
+  YieldLog · Tracker profesional de picks · <a href="/" style="color:var(--accent)">yieldlog.es</a>
+</footer>
+
+</body>
+</html>
