@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
- <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NDLDR0HLDS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-NDLDR0HLDS');
-</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>YieldLog — Registra tus picks y conoce tu Yield real</title>
@@ -609,15 +600,15 @@
 <div id="precios" class="full-bleed">
 <section class="reveal">
   <div class="section-label">Precios</div>
-  <h2>Elige tu plan.<em>Pago único.</em></h2>
-  <p class="section-intro">Sin suscripción. Sin costes mensuales. Un pago y es tuyo para siempre.</p>
+  <h2>Elige tu plan.<em>Sin permanencia.</em></h2>
+  <p class="section-intro">Sin contratos. Cancela cuando quieras. El Starter es pago único para siempre.</p>
 
   <div class="pricing-grid">
     <!-- STARTER -->
     <div class="price-card">
       <div class="price-tier">Starter</div>
       <div class="price-num"><sup>€</sup>9<span style="font-size:1.8rem">.99</span></div>
-      <p class="price-desc">El Google Sheet profesional para empezar a medir tu Yield hoy mismo.</p>
+      <p class="price-desc">El Google Sheet profesional para empezar a medir tu Yield hoy mismo. Pago único, sin renovación.</p>
       <ul class="price-features">
         <li>Google Sheet con 5 hojas completas</li>
         <li>P&L y balance acumulado automáticos</li>
@@ -630,49 +621,97 @@
       <a href="#" class="btn-price btn-price-ghost">Comprar Starter — 9,99 €</a>
     </div>
 
-    <!-- PRO (featured) -->
+    <!-- PRO -->
     <div class="price-card featured">
-      <span class="featured-badge">⭐ Más vendido</span>
-      <div class="price-tier">Pro — <span style="color:var(--accent);font-size:.75rem">precio lanzamiento</span></div>
-      <div class="price-num"><sup>€</sup>27</div>
-      <p class="price-desc">El sistema completo. Registra picks desde el móvil y recibe tu análisis solo.</p>
+      <span class="featured-badge">⭐ Más popular</span>
+      <div class="price-tier">Pro — <span style="color:var(--accent);font-size:.75rem">Bot de Telegram 24h</span></div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin:.75rem 0;justify-content:center">
+        <button onclick="setPro('mensual',this)" class="plan-btn plan-active">Mensual</button>
+        <button onclick="setPro('trimestral',this)" class="plan-btn">Trimestral</button>
+        <button onclick="setPro('semestral',this)" class="plan-btn">Semestral</button>
+        <button onclick="setPro('anual',this)" class="plan-btn">Anual</button>
+      </div>
+      <div class="price-num" id="pro-price"><sup>€</sup>6<span style="font-size:1.8rem">.99</span></div>
+      <p style="font-size:.8rem;color:var(--muted);margin-bottom:.25rem" id="pro-billing">al mes · facturado mensualmente</p>
+      <p style="font-size:.8rem;color:var(--accent);font-weight:600;margin-bottom:.75rem;min-height:1.2rem" id="pro-saving"></p>
       <ul class="price-features">
-        <li>Todo lo del Starter</li>
-        <li>Bot de Telegram activo 24h — sin ordenador</li>
-        <li>Registro en 30s: deporte, tipster, cuota, stake S1–S10</li>
-        <li>/stats — Yield, Win Rate, P&L, cuota media</li>
-        <li>/analisis — ranking por tipster, casa y mercado</li>
-        <li>/racha — últimos 10 picks en tiempo real</li>
+        <li>Todo lo del Starter incluido</li>
+        <li>Bot de Telegram activo 24h</li>
+        <li>Registro en 30s · stake S1–S10</li>
+        <li>/stats · /analisis · /racha</li>
         <li>Resumen semanal automático cada lunes</li>
-        <li>Alerta si entras en racha negativa</li>
-        <li>Soporte por Telegram 7 días</li>
+        <li>Alerta de racha negativa</li>
+        <li>Export /excel con tus picks</li>
+        <li>Soporte por Telegram incluido</li>
       </ul>
-      <a href="#" class="btn-price btn-price-primary">Comprar Pro → 27 €</a>
+      <a href="#" class="btn-price btn-price-primary">Empezar con Pro →</a>
     </div>
 
     <!-- PREMIUM -->
     <div class="price-card">
-      <div class="price-tier">Premium</div>
-      <div class="price-num"><sup>€</sup>47</div>
-      <p class="price-desc">Pro + sesión personalizada de bankroll y gestión de stake con nosotros.</p>
+      <div class="price-tier">Premium — <span style="font-size:.75rem;color:var(--blue)">Bot + sesión 1:1</span></div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin:.75rem 0;justify-content:center">
+        <button onclick="setPremium('mensual',this)" class="plan-btn plan-active-blue">Mensual</button>
+        <button onclick="setPremium('trimestral',this)" class="plan-btn">Trimestral</button>
+      </div>
+      <div class="price-num" id="premium-price"><sup>€</sup>19<span style="font-size:1.8rem">.99</span></div>
+      <p style="font-size:.8rem;color:var(--muted);margin-bottom:.25rem" id="premium-billing">al mes · facturado mensualmente</p>
+      <p style="font-size:.8rem;color:var(--accent);font-weight:600;margin-bottom:.75rem;min-height:1.2rem" id="premium-saving"></p>
       <ul class="price-features">
-        <li>Todo lo del plan Pro</li>
-        <li>Sesión 1:1 de 30 min por Telegram o llamada</li>
-        <li>Analizamos tu bankroll actual y tus picks</li>
-        <li>Te ayudamos a definir tu estrategia de stake</li>
-        <li>Mini-informe personalizado por escrito</li>
-        <li>Soporte extendido 30 días</li>
+        <li>Todo lo del plan Pro incluido</li>
+        <li>Sesión 1:1 mensual de 30 min</li>
+        <li>Análisis de tu bankroll y estrategia de stake</li>
+        <li>Revisión de picks y Yield con criterio real</li>
+        <li>Mini-informe personalizado cada mes</li>
+        <li>Respuesta prioritaria en menos de 2h</li>
+        <li style="color:var(--accent);font-weight:500">Plazas limitadas — máx. 10 clientes</li>
       </ul>
-      <a href="#" class="btn-price btn-price-ghost">Comprar Premium — 47 €</a>
+      <a href="#" class="btn-price btn-price-ghost">Empezar con Premium →</a>
     </div>
   </div>
 
   <p class="upsell-note">
-    💡 ¿Empezaste con el Starter? <strong>Añade el bot Pro por solo 19 € más.</strong>
-    Te lo ofrecemos a los 2 días de tu compra — no disponible en ningún otro sitio.
+    💡 ¿Empezaste con el Starter? <strong>Añade el bot Pro por solo 17,99 € más.</strong>
+    Te lo ofrecemos a los 2 días de tu compra — precio exclusivo para compradores Starter.
   </p>
 </section>
 </div>
+
+<style>
+.plan-btn { background: transparent; border: 1px solid var(--border2); color: var(--muted); padding: .3rem .75rem; border-radius: 6px; font-size: .75rem; font-weight: 500; cursor: pointer; font-family: inherit; transition: all .15s; }
+.plan-btn:hover { border-color: var(--accent); color: var(--white); }
+.plan-active { background: var(--accent) !important; color: var(--navy) !important; border-color: var(--accent) !important; font-weight: 600 !important; }
+.plan-active-blue { background: var(--blue) !important; color: var(--white) !important; border-color: var(--blue) !important; font-weight: 600 !important; }
+</style>
+
+<script>
+const proPlans = {
+  mensual:    { price: '6<span style="font-size:1.8rem">.99</span>',  billing: 'al mes · facturado mensualmente',   saving: '' },
+  trimestral: { price: '5<span style="font-size:1.8rem">.99</span>',  billing: 'al mes · 17,97 € cada 3 meses',    saving: 'Ahorras 3 € respecto al mensual' },
+  semestral:  { price: '4<span style="font-size:1.8rem">.99</span>',  billing: 'al mes · 29,94 € cada 6 meses',    saving: 'Ahorras 12 € respecto al mensual' },
+  anual:      { price: '3<span style="font-size:1.8rem">.99</span>',  billing: 'al mes · 47,88 € al año',           saving: 'Ahorras 36 € respecto al mensual' },
+};
+const premiumPlans = {
+  mensual:    { price: '19<span style="font-size:1.8rem">.99</span>', billing: 'al mes · facturado mensualmente',   saving: '' },
+  trimestral: { price: '14<span style="font-size:1.8rem">.99</span>', billing: 'al mes · 44,97 € cada 3 meses',    saving: 'Ahorras 15 € respecto al mensual' },
+};
+function setPro(plan, btn) {
+  document.querySelectorAll('.price-card.featured .plan-btn').forEach(b => { b.classList.remove('plan-active'); });
+  btn.classList.add('plan-active');
+  const p = proPlans[plan];
+  document.getElementById('pro-price').innerHTML = '<sup>€</sup>' + p.price;
+  document.getElementById('pro-billing').textContent = p.billing;
+  document.getElementById('pro-saving').textContent = p.saving;
+}
+function setPremium(plan, btn) {
+  document.querySelectorAll('.price-card:last-of-type .plan-btn').forEach(b => { b.classList.remove('plan-active-blue'); });
+  btn.classList.add('plan-active-blue');
+  const p = premiumPlans[plan];
+  document.getElementById('premium-price').innerHTML = '<sup>€</sup>' + p.price;
+  document.getElementById('premium-billing').textContent = p.billing;
+  document.getElementById('premium-saving').textContent = p.saving;
+}
+</script>
 
 <!-- GLOSARIO -->
 <div class="full-bleed" id="glosario">
@@ -820,10 +859,6 @@
 <footer>
   <strong>YieldLog</strong> · Producto digital · Pago único · Sin suscripción<br>
   <span style="margin-top:.5rem;display:block">Para apostadores deportivos hispanohablantes que quieren control real.</span>
-  <br>
-  <a href="/blog/yield-apuestas-deportivas.html" style="color:var(--accent)">Qué es el Yield</a> · 
-  <a href="/blog/control-apuestas-deportivas.html" style="color:var(--accent)">Control de apuestas</a> · 
-  <a href="/blog/bot-telegram-apuestas-deportivas.html" style="color:var(--accent)">Bot de Telegram</a>
 </footer>
 
 <script>
